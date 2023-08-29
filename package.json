@@ -1,6 +1,6 @@
 {
   "name": "@gkd-kit/selector",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "@gkd-kit/selector",
   "main": "./index.cjs",
   "types": "./index.d.ts",
