@@ -78,4 +78,37 @@ TextView[id=`com.byted.pangle:id/tt_item_tv`][text=`不感兴趣`] <n LinearLayo
 
 的目标匹配节点是等价的, 但是在查询算法时间复杂度上, 后者更慢
 
-<https://gkd-kit.gitee.io/import/38517192/7d8e9661-c29a-4448-94c2-d7b0a1756107>
+如下是网页无障碍快照审查工具, 使用它的搜索框的选择器查询可以实时测试编写的选择器
+
+```txt
+https://gkd-kit.gitee.io/import/12472597
+https://gkd-kit.gitee.io/import/12472598
+https://gkd-kit.gitee.io/import/12472599
+https://gkd-kit.gitee.io/import/12472605
+https://gkd-kit.gitee.io/import/12472606
+https://gkd-kit.gitee.io/import/12472607
+https://gkd-kit.gitee.io/import/12472608
+https://gkd-kit.gitee.io/import/12472610
+https://gkd-kit.gitee.io/import/12472611
+https://gkd-kit.gitee.io/import/12472612
+https://gkd-kit.gitee.io/import/12472613
+https://gkd-kit.gitee.io/import/12472615
+https://gkd-kit.gitee.io/import/12472616
+https://gkd-kit.gitee.io/import/12472617
+https://gkd-kit.gitee.io/import/12472619
+https://gkd-kit.gitee.io/import/12472620
+https://gkd-kit.gitee.io/import/12472621
+https://gkd-kit.gitee.io/import/12472623
+https://gkd-kit.gitee.io/import/12472625
+https://gkd-kit.gitee.io/import/12472627
+https://gkd-kit.gitee.io/import/12472628
+https://gkd-kit.gitee.io/import/12472629
+https://gkd-kit.gitee.io/import/12472630
+https://gkd-kit.gitee.io/import/12472631
+https://gkd-kit.gitee.io/import/12472632
+https://gkd-kit.gitee.io/import/12472633
+https://gkd-kit.gitee.io/import/12472634
+https://gkd-kit.gitee.io/import/12472635
+https://gkd-kit.gitee.io/import/12472636
+https://gkd-kit.gitee.io/import/12472637
+```
