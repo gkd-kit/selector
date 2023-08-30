@@ -1,19 +1,24 @@
 {
-  "name": "@gkd-kit/selector",
-  "version": "0.0.11",
-  "description": "@gkd-kit/selector",
-  "main": "./index.cjs",
-  "types": "./index.d.ts",
-  "type": "commonjs",
-  "files": [
-    "./kotlin",
-    "./index.cjs",
-    "./index.d.ts"
-  ],
-  "author": "lisonge",
-  "homepage": "https://github.com/gkd-kit",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "20"
-  }
+    "name": "@gkd-kit/selector",
+    "version": "0.0.11",
+    "description": "@gkd-kit/selector",
+    "main": "./index.cjs",
+    "types": "./index.d.ts",
+    "type": "commonjs",
+    "private": false,
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "files": [
+        "./kotlin",
+        "./index.cjs",
+        "./index.d.ts"
+    ],
+    "author": "lisonge",
+    "homepage": "https://github.com/gkd-kit/selector",
+    "license": "MIT",
+    "volta": {
+        "node": "20.5.1"
+    }
 }
