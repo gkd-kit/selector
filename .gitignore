@@ -1,3 +1,4 @@
 node_modules
 /kotlin
 .vscode
+/pnpm-lock.yaml
