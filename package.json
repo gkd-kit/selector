@@ -1,19 +1,17 @@
 {
     "name": "@gkd-kit/selector",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "@gkd-kit/selector",
-    "main": "./index.cjs",
-    "types": "./index.d.ts",
-    "type": "commonjs",
+    "main": "./kotlin/gkd-selector.mjs",
+    "types": "./kotlin/gkd-selector.d.ts",
+    "type": "module",
     "private": false,
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.org/"
     },
     "files": [
-        "./kotlin",
-        "./index.cjs",
-        "./index.d.ts"
+        "./kotlin"
     ],
     "author": "lisonge",
     "homepage": "https://github.com/gkd-kit/selector",
