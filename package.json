@@ -1,6 +1,6 @@
 {
     "name": "@gkd-kit/selector",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "description": "@gkd-kit/selector",
     "main": "./kotlin/gkd-selector.mjs",
     "types": "./kotlin/gkd-selector.d.ts",
@@ -15,7 +15,7 @@
     ],
     "author": "lisonge",
     "homepage": "https://github.com/gkd-kit/selector",
-    "license": "MIT",
+    "license": "GPL-v3",
     "volta": {
         "node": "20.5.1"
     }
