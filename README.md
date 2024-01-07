@@ -2,6 +2,13 @@
 
 一个类似 css 选择器的高级选择器
 
+<details open>
+  <summary>示例: 选择器路径视图</summary>
+
+![image](https://github.com/gkd-kit/inspect/assets/38517192/639661be-3ab4-4098-8676-b2a7ed136d66)
+
+</details>
+
 ## 语法
 
 与 css 类似, 一个选择器由 属性选择器 和 关系选择器 交叉组成, 并且开头末尾必须是 属性选择器
