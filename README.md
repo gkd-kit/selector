@@ -63,12 +63,12 @@
 
 一些优化: 如果正则表达式满足下面的条件, 选择器将使用内置的简单的函数匹配, 而不是真正地去运行一个正则表达式
 
-- `[text~="(?is)abc.*"]` -> startsWith('abc', ignoreCase = true)
-- `[text~="(?is).*abc.*"]` -> contains('abc', ignoreCase = true)
-- `[text~="(?is).*abc"]` -> endsWith('abc', ignoreCase = true)
-- `[text!~="(?is)abc.*"]` -> !startsWith('abc', ignoreCase = true)
-- `[text!~="(?is).*abc.*"]` -> !contains('abc', ignoreCase = true)
-- `[text!~="(?is).*abc"]` -> !endsWith('abc', ignoreCase = true)
+- `[text~="(?is)abc.*"]` -> `startsWith('abc', ignoreCase = true)`
+- `[text~="(?is).*abc.*"]` -> `contains('abc', ignoreCase = true)`
+- `[text~="(?is).*abc"]` -> `endsWith('abc', ignoreCase = true)`
+- `[text!~="(?is)abc.*"]` -> `!startsWith('abc', ignoreCase = true)`
+- `[text!~="(?is).*abc.*"]` -> `!contains('abc', ignoreCase = true)`
+- `[text!~="(?is).*abc"]` -> `!endsWith('abc', ignoreCase = true)`
 
 上面的 `abc` 指代不包含 `\^$.?*|+()[]{}` 这类特殊字符的任意字符串, 如 `ikun` 符合, `ikun?` 不符合
 
