@@ -55,6 +55,37 @@
 
 `!$=` -> `notEndsWith`
 
+`~=` -> `matches` (需要 v1.7.0)
+
+`!~=` -> `notMatches` (需要 v1.7.0)
+
+附加说明: `matches`/`notMatches` 要求 值 必须是合法的 java/kotlin 正则表达式, 否则提示语法错误
+
+一些优化: 如果正则表达式满足下面的条件, 选择器将使用内置的简单的函数匹配, 而不是真正地去运行一个正则表达式
+
+- `[text~="(?is)abc.*"]` -> startsWith('abc', ignoreCase = true)
+- `[text~="(?is).*abc.*"]` -> contains('abc', ignoreCase = true)
+- `[text~="(?is).*abc"]` -> endsWith('abc', ignoreCase = true)
+- `[text!~="(?is)abc.*"]` -> !startsWith('abc', ignoreCase = true)
+- `[text!~="(?is).*abc.*"]` -> !contains('abc', ignoreCase = true)
+- `[text!~="(?is).*abc"]` -> !endsWith('abc', ignoreCase = true)
+
+上面的 `abc` 指代不包含 `\^$.?*|+()[]{}` 这类特殊字符的任意字符串, 如 `ikun` 符合, `ikun?` 不符合
+
+简单来说就是如果你只想忽略大小写去简单匹配或不匹配一些字符, 那么直接使用上面的格式
+
+由于 选择器 需要同时满足 浏览器/Js(审查工具), Android/Java(GKD) 运行, 而这两个平台的正则表达式的底层实现和语法表示略有不同
+
+比如上面的例子中开头的 `(?is)` 是 Java 正则表达式的 inline flags 语法, 但实际上 Js 并不支持这样写, 只是选择器内部做了一些兼容让它支持
+
+并且选择器的 Js 端只兼容在开头的 flags, 在内部的 flags 不支持, 此外 Java 和 Js 支持的 flags 也有不同, 某些特殊的表达式也表现也不一致
+
+总之不要使用太过复杂(多复杂我也不知道)的正则表达式, 某些正则表达式有可能在审查工具上匹配, 但是在 GKD 上不匹配
+
+如果你能确保正则表达式在 Js 和 Java/kotlin 的匹配行为一致, 那就没问题
+
+---
+
 值: 4 种类型, `null`, `boolean`, `string`, `int`
 
 - null
@@ -79,9 +110,11 @@
 |  ^=  |    -     |    -     |    -     | &#10004; |
 | \*=  |    -     |    -     |    -     | &#10004; |
 |  $=  |    -     |    -     |    -     | &#10004; |
+|  ~=  |    -     |    -     |    -     | &#10004; |
 | !^=  |    -     |    -     |    -     | &#10004; |
 | !\*= |    -     |    -     |    -     | &#10004; |
 | !$=  |    -     |    -     |    -     | &#10004; |
+| !~=  |    -     |    -     |    -     | &#10004; |
 
 ### 关系选择器
 
