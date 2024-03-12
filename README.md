@@ -66,9 +66,9 @@
 - `[text~="(?is)abc.*"]` -> `startsWith('abc', ignoreCase = true)`
 - `[text~="(?is).*abc.*"]` -> `contains('abc', ignoreCase = true)`
 - `[text~="(?is).*abc"]` -> `endsWith('abc', ignoreCase = true)`
-- `[text!~="(?is)abc.*"]` -> `!startsWith('abc', ignoreCase = true)`
-- `[text!~="(?is).*abc.*"]` -> `!contains('abc', ignoreCase = true)`
-- `[text!~="(?is).*abc"]` -> `!endsWith('abc', ignoreCase = true)`
+- `[text!~="(?is)abc.*"]` -> `notStartsWith('abc', ignoreCase = true)`
+- `[text!~="(?is).*abc.*"]` -> `notContains('abc', ignoreCase = true)`
+- `[text!~="(?is).*abc"]` -> `notEndsWith('abc', ignoreCase = true)`
 
 上面的 `abc` 指代不包含 `\^$.?*|+()[]{}` 这类特殊字符的任意字符串, 如 `ikun` 符合, `ikun?` 不符合
 
