@@ -61,7 +61,7 @@
 
 > 可以不用关心的提示: 如果你学过 CSS, 你可能已经注意到 ~= 在 CSS 里的语义(包含单词)与在 GKD 里的语义不一致
 
-附加说明: `matches`/`notMatches` 要求 值 必须是合法的 java/kotlin 正则表达式, 否则提示语法错误
+附加说明: `matches`/`notMatches` 要求 值 必须是合法的 Java/Kotlin 正则表达式, 否则提示语法错误
 
 一些优化: 如果正则表达式满足下面的条件, 选择器将使用内置的简单的函数匹配, 而不是真正地去运行一个正则表达式
 
@@ -78,13 +78,21 @@
 
 由于 选择器 需要同时满足 浏览器/Js(审查工具), Android/Java(GKD) 运行, 而这两个平台的正则表达式的底层实现和语法表示略有不同
 
+因此为了在 Js 端实现和 Java 一致的正则表达式规范, 网页审查工具借助 [Kotlin Wasm](https://kotlinlang.org/docs/wasm-overview.html) 将正则表达式的 matches 函数接口编译为 wasm 提供给 Js 调用
+
+Kotlin Wasm 需要你的浏览器支持 [WasmGC](https://developer.chrome.com/blog/wasmgc?hl=zh-cn), 也就是版本需要满足下列条件
+
+![image](https://github.com/gkd-kit/gkd/assets/38517192/15c8dee9-6480-428b-be4f-45939b4046e5)
+
+如果你的浏览器版本不满足, 正则表达式将自动回退到 Js 端实现, 以下是在 Js 端使用正则表达式需要注意的地方
+
 比如上面的例子中开头的 `(?is)` 是 Java 正则表达式的 inline flags 语法, 但实际上 Js 并不支持这样写, 只是选择器内部做了一些兼容让它支持
 
 并且选择器的 Js 端只兼容在开头的 flags, 在内部的 flags 不支持, 此外 Java 和 Js 支持的 flags 也有不同, 某些特殊的表达式也表现也不一致
 
 总之不要使用太过复杂(多复杂我也不知道)的正则表达式, 某些正则表达式有可能在审查工具上匹配, 但是在 GKD 上不匹配
 
-如果你能确保正则表达式在 Js 和 Java/kotlin 的匹配行为一致, 那就没问题
+如果你能确保正则表达式在 Js 和 Java/Kotlin 的匹配行为一致, 那就没问题
 
 ---
 
