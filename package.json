@@ -1,22 +1,25 @@
 {
-    "name": "@gkd-kit/selector",
-    "version": "0.2.0",
-    "description": "@gkd-kit/selector",
-    "main": "./kotlin/gkd-selector.mjs",
-    "types": "./kotlin/gkd-selector.d.ts",
-    "type": "module",
-    "private": false,
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org/"
-    },
-    "files": [
-        "./kotlin"
-    ],
-    "author": "lisonge",
-    "homepage": "https://github.com/gkd-kit/selector",
-    "license": "GPL-v3",
-    "volta": {
-        "node": "20.5.1"
-    }
+  "name": "@gkd-kit/selector",
+  "version": "0.2.0",
+  "description": "@gkd-kit/selector",
+  "main": "./kotlin/gkd-selector.mjs",
+  "types": "./kotlin/gkd-selector.d.ts",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "postpublish": "curl -X PUT https://registry-direct.npmmirror.com/@gkd-kit/selector/sync"
+  },
+  "files": [
+    "./kotlin"
+  ],
+  "author": "lisonge",
+  "homepage": "https://github.com/gkd-kit/selector",
+  "license": "GPL-v3",
+  "volta": {
+    "node": "20.5.1"
+  }
 }
