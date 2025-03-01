@@ -1,6 +1,6 @@
 {
   "name": "@gkd-kit/selector",
-  "version": "0.5.13",
+  "version": "0.5.15",
   "description": "@gkd-kit/selector",
   "main": "./kotlin/gkd-selector.mjs",
   "types": "./kotlin/gkd-selector.d.ts",
@@ -11,7 +11,14 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "postpublish": "curl -X PUT https://registry-direct.npmmirror.com/@gkd-kit/selector/sync"
+    "postpublish": "curl -X PUT https://registry-direct.npmmirror.com/@gkd-kit/selector/sync",
+    "build": "tsx scripts/build.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.8",
+    "rimraf": "6.0.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
   },
   "files": [
     "./kotlin"
@@ -20,6 +27,12 @@
   "homepage": "https://github.com/gkd-kit/selector",
   "license": "GPL-v3",
   "volta": {
-    "node": "20.5.1"
+    "node": "22.14.0",
+    "pnpm": "10.5.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
