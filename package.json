@@ -1,6 +1,6 @@
 {
   "name": "@gkd-kit/selector",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "description": "@gkd-kit/selector",
   "main": "./kotlin/gkd-selector.mjs",
   "types": "./kotlin/gkd-selector.d.ts",
