@@ -1,6 +1,6 @@
 {
   "name": "@gkd-kit/selector",
-  "version": "0.5.18",
+  "version": "0.5.19",
   "description": "@gkd-kit/selector",
   "main": "./kotlin/gkd-selector.mjs",
   "types": "./kotlin/gkd-selector.d.ts",
@@ -12,7 +12,8 @@
   },
   "scripts": {
     "postpublish": "curl -X PUT https://registry-direct.npmmirror.com/@gkd-kit/selector/sync",
-    "build": "tsx scripts/build.ts"
+    "build": "tsx scripts/build.ts",
+    "prepublish": "tsx scripts/build.ts"
   },
   "devDependencies": {
     "@types/node": "22.13.8",
